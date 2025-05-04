@@ -48,14 +48,15 @@ export default function TextForm(props) {
         <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor : props.mode==='dark' ? '#042743' : 'white', color: props.mode==='dark' ? 'white' : 'black'}} id="myBox" rows="8"></textarea>
         </div>
         <button className="btn btn-primary my-1" onClick={handleUpperCaseClick}>Convert to Uppercase</button>
-        <button className="btn btn-success mx-3 my-1" onClick={handleLowerCaseClick}>Convert to Lowercase</button>
+        <button className="btn btn-secondary mx-2 my-1" onClick={handleCopy}>Copy Text</button>
+        <button className="btn btn-success mx-2 my-1" onClick={handleLowerCaseClick}>Convert to Lowercase</button>
         <button className="btn btn-danger my-1" onClick={handleClearText}>Clear Text</button>
-        <button className="btn btn-secondary mx-3 my-1" onClick={handleCopy}>Copy Text</button>
+        
     </div>
     <div className="container my-3" style={{color : props.mode==='dark' ? 'white' : 'black'}}>
         <h3>Your Text Summary</h3>
-        <p>Your Text have {text.split(" ").filter((element)=>{return element.length!==0}).length} Words and {text.length} Characters</p>
-        <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes to read</p>
+        <p>Your Text have {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Words and {text.length} Characters</p>
+        <p>{0.008 * text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Minutes to read</p>
         <h3>Preview</h3>
         <p>{text.length>0 ? text: "Enter Your Text to Preview"}</p>
     </div>
