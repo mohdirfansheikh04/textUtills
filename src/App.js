@@ -46,7 +46,7 @@ function App() {
           {/* <Route exact path="/" element={<TextForm heading="Try TextUtils - Word Counter, Character Counter" mode={mode} showAlert={showAlert} />} /> */}
           {/* <Route exact path="/about" element={<About/>} /> */}
           <TextForm heading="Try TextUtils - Word Counter, Character Counter" mode={mode} showAlert={showAlert} />
-          <About/>
+          <About mode={mode}></About>
         {/* </Routes> */}
       </div>
     {/* </Router> */}
